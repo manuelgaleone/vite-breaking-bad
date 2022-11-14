@@ -5,6 +5,9 @@ export default {
     name: "MainContent",
     components: {
         CharactersList
+    },
+    props: {
+        characters: Array
     }
 }
 </script>
@@ -19,7 +22,7 @@ export default {
                 <option value="3">Three</option>
             </select>
         </div>
-        <CharactersList></CharactersList>
+        <CharactersList :characters="characters"></CharactersList>
     </div>
 </template>
 

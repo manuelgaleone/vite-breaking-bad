@@ -20,7 +20,7 @@ export default {
       axios.get(url)
       .then(response => {
         console.log(response);
-        this.data.characters = response.data.results
+        this.data.characters = response.data.name
         this.data.info = response.data.info
       })
       .catch(err => {
@@ -37,7 +37,7 @@ export default {
 
 <template>
   <HeaderContent></HeaderContent>
-  <MainContent></MainContent>
+  <MainContent :characters="data.characters"></MainContent>
   <FooterContent></FooterContent>
 </template>
 
