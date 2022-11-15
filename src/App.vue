@@ -3,6 +3,7 @@ import HeaderContent from "./components/HeaderContent.vue";
 import MainContent from "./components/MainContent.vue";
 import FooterContent from "./components/FooterContent.vue";
 import {data} from "./charactersData.js"
+import axios from "axios"
 
 export default {
   components: {
@@ -20,8 +21,7 @@ export default {
       axios.get(url)
       .then(response => {
         console.log(response);
-        this.data.characters = response.data.name
-        this.data.info = response.data.info
+        this.data.characters = response.data
       })
       .catch(err => {
         console.error(err.message)
@@ -37,7 +37,7 @@ export default {
 
 <template>
   <HeaderContent></HeaderContent>
-  <MainContent :characters="data.characters"></MainContent>
+  <MainContent></MainContent>
   <FooterContent></FooterContent>
 </template>
 

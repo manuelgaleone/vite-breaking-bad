@@ -1,21 +1,22 @@
 <script>
-import CharacterCard from "../components/CharacterCard.vue";
-
 export default {
-    name: "CharactersList",
+    name: "CharacterCard",
     props: {
         character: Object
-    },
-    components: {
-        CharacterCard
     }
 }
 </script>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <CharacterCard :character="character"></CharacterCard>
+    <div class="col-3 p-2 character_card">
+        <div class="character text-center">
+            <img class="character_image" :src="character.img" alt="Character Image">
+            <h3 class="p-2">
+                {{character.name}}
+            </h3>
+            <div class="status">
+                {{character.status}}
+            </div>
         </div>
     </div>
 </template>
