@@ -1,22 +1,30 @@
 <script>
+import {data} from "../charactersData.js";
 import CharactersList from "../components/CharactersList.vue";
 
 export default {
     name: "MainContent",
     components: {
         CharactersList
+    },
+    data() {
+    return {
+      data
     }
+  },
 }
+
+
+
 </script>
 
 <template>
     <div class="container">
         <div class="select_input">
-            <select class="form-select select_input_element" aria-label="Default select example">
-                <option selected>Select Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="select_input_element">
+                <option value="" selected disabled>Select Category</option>
+                <option value="breakingbad">Breaking Bad</option>
+                <option value="bettercallsoul">Better Call Soul</option>
             </select>
         </div>
         <div class="characters_search p-3 my-3">

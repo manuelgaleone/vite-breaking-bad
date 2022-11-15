@@ -27,11 +27,22 @@ export default {
         console.error(err.message)
         this.data.error = err.message
       })
+    },
+    changeCategory(url) {
+      axios.get(url)
+      .then(response => {
+        console.log(response);
+        this.data.characters = response.data
+      })
+      .catch(err => {
+        console.error(err.message)
+        this.data.error = err.message
+      })
     }
   },
-  mounted() {
+  /*mounted() {
     this.callApi(this.data.apiUrl)
-  }
+  }*/
 }
 </script>
 
