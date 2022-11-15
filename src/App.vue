@@ -17,7 +17,7 @@ export default {
     }
   },
   methods : {
-    callApi() {
+    callApi(url) {
       axios.get(url)
       .then(response => {
         console.log(response);
@@ -28,8 +28,10 @@ export default {
         this.data.error = err.message
       })
     },
-    changeCategory() {
-      axios.get(this.data.apiUrlBetter)
+    searchCategoryUrl() {
+      let url = `${this.data.apiUrl}?category=Better+Call+Saul`
+
+      axios.get(url)
       .then(response => {
         console.log(response);
         this.data.characters = response.data
@@ -41,14 +43,14 @@ export default {
     }
   },
   mounted() {
-    this.callApi(this.data.apiUrl)
+    this.callApi(this.data.apiUrl) 
   }
 }
 </script>
 
 <template>
   <HeaderContent></HeaderContent>
-  <MainContent @searchCategory="changeCategory"></MainContent>
+  <MainContent @searchCategory="searchCategoryUrl"></MainContent>
   <FooterContent></FooterContent>
 </template>
 

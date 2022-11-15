@@ -22,8 +22,8 @@ export default {
     <div class="container">
         <div class="select_input">
             <select v-model="data.searchCategory" @change="$emit('searchCategory')" class="select_input_element">
-                <option value="" selected disabled>Select Category</option>
-                <option value="breakingbad">Breaking Bad</option>
+                <!-- <option value="" selected disabled>Select Category</option> -->
+                <option value="breakingbad" selected>Breaking Bad</option>
                 <option value="bettercallsoul">Better Call Soul</option>
             </select>
         </div>
