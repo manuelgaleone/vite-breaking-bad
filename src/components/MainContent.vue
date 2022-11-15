@@ -21,7 +21,7 @@ export default {
 <template>
     <div class="container">
         <div class="select_input">
-            <select class="select_input_element">
+            <select @change="changeCategory(data.apiUrlBetter)" class="select_input_element">
                 <option value="" selected disabled>Select Category</option>
                 <option value="breakingbad">Breaking Bad</option>
                 <option value="bettercallsoul">Better Call Soul</option>
