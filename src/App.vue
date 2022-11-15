@@ -17,7 +17,7 @@ export default {
     }
   },
   methods : {
-    callApi(url) {
+    callApi() {
       axios.get(url)
       .then(response => {
         console.log(response);
@@ -28,8 +28,8 @@ export default {
         this.data.error = err.message
       })
     },
-    changeCategory(url) {
-      axios.get(url)
+    changeCategory() {
+      axios.get(this.data.apiUrlBetter)
       .then(response => {
         console.log(response);
         this.data.characters = response.data
@@ -40,15 +40,15 @@ export default {
       })
     }
   },
-  /*mounted() {
+  mounted() {
     this.callApi(this.data.apiUrl)
-  }*/
+  }
 }
 </script>
 
 <template>
   <HeaderContent></HeaderContent>
-  <MainContent></MainContent>
+  <MainContent @searchCategory="changeCategory"></MainContent>
   <FooterContent></FooterContent>
 </template>
 

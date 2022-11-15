@@ -5,4 +5,5 @@ export const data = reactive({
     apiUrlBetter: 'https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul',
     characters: null,
     error: null,
+    searchCategory: ''
 })
