@@ -1,4 +1,5 @@
 <script>
+import {data} from "../charactersData.js"
 import CharacterCard from "../components/CharacterCard.vue";
 
 export default {
@@ -8,41 +9,34 @@ export default {
     },
     components: {
         CharacterCard
+    },
+    data() {
+    return {
+      data
     }
+  }
 }
 </script>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <CharacterCard :character="character"></CharacterCard>
+    <div class="container char_container">
+        <div class="row p-3 d_flex align_items">
+            <CharacterCard v-for="character in data.characters"  :character="character"></CharacterCard>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.characters_container {
+
+.char_container {
     background-color: white;
 }
-.search_caption {
-    color: white;
-    font-weight: 600;
-}
-.character_card {
-    background-color: rgb(37, 53, 78);
-    color: white;
-}
-
 .d_flex {
     display: flex;
 }
 
 .align_items {
     align-items: center;
-}
-
-img {
-    width: 250px;
 }
 
 </style>

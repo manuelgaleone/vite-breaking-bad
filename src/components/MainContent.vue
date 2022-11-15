@@ -1,17 +1,11 @@
 <script>
-import {data} from "../charactersData.js"
 import CharactersList from "../components/CharactersList.vue";
 
 export default {
     name: "MainContent",
     components: {
         CharactersList
-    },
-    data() {
-    return {
-      data
     }
-  }
 }
 </script>
 
@@ -30,7 +24,7 @@ export default {
                 Found 62 characters.
             </p>
         </div>
-        <CharactersList v-for="character in data.characters" :character="character"></CharactersList>
+        <CharactersList></CharactersList>
     </div>
 </template>
 
